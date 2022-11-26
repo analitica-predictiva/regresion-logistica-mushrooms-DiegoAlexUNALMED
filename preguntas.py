@@ -64,22 +64,10 @@ def pregunta_01():
     En esta función se realiza la carga de datos.
     """
     # Lea el archivo `mushrooms.csv` y asignelo al DataFrame `df`
-    df = ____
-
-    # Remueva la columna `veil-type` del DataFrame `df`.
-    # Esta columna tiene un valor constante y no sirve para la detección de hongos.
-    ____.____(____)
-
-    # Asigne la columna `type` a la variable `y`.
-    ____ = ____
-
-    # Asigne una copia del dataframe `df` a la variable `X`.
-    ____ = ____.____(____)
-
-    # Remueva la columna `type` del DataFrame `X`.
-    ____.____(____)
-
-    # Retorne `X` y `y`
+    df = pd.read_csv("https://raw.githubusercontent.com/analitica-predictiva/regresion-logistica-mushrooms-DiegoAlexUNALMED/main/mushrooms.csv")
+    df = df.drop("veil_type", axis = 1)
+    y = df.type
+    X = df.drop("type",axis = 1)
     return X, y
 
 
